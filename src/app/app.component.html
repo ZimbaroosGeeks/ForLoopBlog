@@ -1,0 +1,12 @@
+<h1>for loop test</h1>
+<button (click)="runLoops()">Run Loops</button>
+<div>
+  <ul>
+    <li *ngFor="let myItem of this.itemList">
+      name: {{ myItem.name }}<br />
+      color: {{ myItem.color }}
+    </li>
+  </ul>
+</div>
+<div [innerHTML]="forLoop"></div>
+<div [innerHTML]="foreachLoop"></div>
