@@ -8,28 +8,49 @@ import { element } from 'protractor';
 })
 export class AppComponent {
   title = 'forLoops';
-  public itemList:any[] = [{ name: 'ball', color: 'red'},
-  { name: 'block', color: 'green'},
-  { name: 'tube', color: 'purple'},
-  { name: 'key', color: 'blue'},
+  public itemList: any[] = [{ name: 'ball', color: 'red' },
+  { name: 'block', color: 'green' },
+  { name: 'tube', color: 'purple' },
+  { name: 'key', color: 'blue' },
   ];
-  public forLoop:string = 'empty';
-  public foreachLoop:string = 'empty';
+  public forLoop: string = 'empty for';
+  public foreachLoop: string = 'empty foreach';
+  public forInLoop: string = 'empty for (in)';
+  public forOfLoop: string = 'empty for (of)';
 
-  public runLoops(){
+  public forLoopCode: string = `    for (let myIndex = 0; myIndex < this.itemList.length; myIndex++) {
+    this.forLoop += 'Index = ' + myIndex.toString() + '; color at index = ' + this.itemList[myIndex].color + '<br/>'
+  }`;
+
+  public runLoops() {
     this.forLoop = '';
-    for(let myIndex = 0; myIndex < this.itemList.length; myIndex++){
+    for (let myIndex = 0; myIndex < this.itemList.length; myIndex++) {
       this.forLoop += 'Index = ' + myIndex.toString() + '; color at index = ' + this.itemList[myIndex].color + '<br/>'
     }
 
     console.log(this.itemList);
 
     this.foreachLoop = '';
-    this.itemList.forEach((element, index) => { 
+    this.itemList.forEach((element, index) => {
       this.foreachLoop += 'Index = ' + index + ' name is ' + element.name + '<br/>';
     });
 
     this.itemList.forEach(this.myLoopFuntion, this.title);
+
+    this.forInLoop = '';
+    console.log("******** for (in) loop ********")
+    for (let myItem in this.itemList) {
+      this.forInLoop += 'myItem = ' + myItem + '<br/>';
+      console.log('myItem = ', myItem);
+    }
+
+    console.log("******** for (of) loop ********")
+    this.forOfLoop = '';
+    for (let myItem of this.itemList) {
+      this.forOfLoop += 'myItem = ' + myItem + '<br/>';
+      console.log('myItem = ', myItem);
+    }
+
   }
 
   private myLoopFuntion(element, index, arr) {

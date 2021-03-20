@@ -1,0 +1,31 @@
+.one {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: antiquewhite;
+    border-radius: 4px;
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+}
+.two {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color:rgb(175, 228, 230);
+    border-radius: 4px;
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+}
+h3 {
+    margin-top:-1px;
+    margin-left: -10px;
+    margin-bottom: -2px;
+}
+button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

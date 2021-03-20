@@ -1,12 +1,45 @@
 <h1>for loop test</h1>
-<button (click)="runLoops()">Run Loops</button>
 <div>
+  let myItem of this.itemList
   <ul>
     <li *ngFor="let myItem of this.itemList">
+      myItem: {{ myItem }}<br />
       name: {{ myItem.name }}<br />
       color: {{ myItem.color }}
     </li>
   </ul>
 </div>
-<div [innerHTML]="forLoop"></div>
-<div [innerHTML]="foreachLoop"></div>
+<div>
+  *ngFor=&quot;let myItem in this.itemList&quot; - <strong>does not work in *ngFor statment</strong>
+  <ul>
+    <li *ngFor="let myItem in this.itemList">
+      myItem: {{ myItem }}<br />
+      name: {{ myItem.name }}<br />
+      color: {{ myItem.color }}
+    </li>
+  </ul>
+</div>
+<div>
+  *ngFor=&quot;let index=0&#59; index&#60;this.itemList.length&#59; myIndex++&#59;&quot; - <strong>does not work in *ngFor statement</strong>
+</div>
+
+
+
+<button (click)="runLoops()">Run Loops</button>
+
+<div class='one'>
+  <h3>for loop:</h3>
+  <div [innerHTML]="forLoop"></div>
+</div>
+<div class='two'>
+  <h3>for in loop:</h3>
+  <div [innerHTML]="forInLoop"></div>
+</div>
+<div class='one'>
+  <h3>for of loop:</h3>
+  <div [innerHTML]="forOfLoop"></div>
+</div>
+<div class='two'>
+  <h3>foreach loop:</h3>
+  <div [innerHTML]="foreachLoop"></div>
+</div>
